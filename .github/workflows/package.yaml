@@ -16,9 +16,21 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      # Cache
+      - uses: actions/cache@v2
+        with:
+          path: Library
+          key: Library
+          restore-keys: Library-
+
       # Build
       - name: Build project
         uses: game-ci/unity-builder@v2
         with:
           unityVersion: 2020.3.1f1
           buildMethod: MackySoft.ExportPackageExample.Editor.UnityPackageExporter.Export
+
+      # Output
+      - uses: actions/upload-artifact@v2
+        with:
+          path: Dist
