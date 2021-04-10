@@ -11,7 +11,7 @@ namespace MackySoft.ExportPackageExample.Editor {
 
 		const string k_PackageRoot = "MackySoft";
 		const string k_PackageName = "ExportPackageExample";
-		const string k_TargetPath = "Dist";
+		const string k_TargetPath = "Build";
 		const string k_SearchPattern = "*";
 
 		public static void Export () {

@@ -15,9 +15,12 @@ jobs:
       # Checkout
       - name: Checkout repository
         uses: actions/checkout@v2
+        with:
+          lfs: true
 
       # Cache
-      - uses: actions/cache@v2
+      - name: Cache
+        uses: actions/cache@v2
         with:
           path: Library
           key: Library
@@ -31,6 +34,8 @@ jobs:
           buildMethod: MackySoft.ExportPackageExample.Editor.UnityPackageExporter.Export
 
       # Output
-      - uses: actions/upload-artifact@v2
+      - name: Output Unity Package
+        uses: actions/upload-artifact@v2
         with:
-          path: Dist
+          name: Unity Package
+          path: Build
