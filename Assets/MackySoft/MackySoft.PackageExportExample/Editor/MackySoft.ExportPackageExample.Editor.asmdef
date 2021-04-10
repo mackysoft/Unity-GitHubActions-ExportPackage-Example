@@ -1,0 +1,18 @@
+{
+    "name": "MackySoft.ExportPackageExample.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:35814d49365f2b2419833676017ad822"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
