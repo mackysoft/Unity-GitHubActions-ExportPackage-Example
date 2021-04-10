@@ -18,7 +18,7 @@ jobs:
 
       # Build
       - name: Build project
-        uses: webbertakken/unity-builder@v0.10
+        uses: game-ci/unity-builder@v2
         with:
           unityVersion: 2020.3.1f1
           buildMethod: MackySoft.ExportPackageExample.Editor.UnityPackageExporter.Export
