@@ -16,7 +16,7 @@ namespace MackySoft.ExportPackageExample.Editor {
 			string exportPath = GetExportPath();
 			string[] assetPaths = GetAssetPaths();
 
-			ExportPackage(exportPath,$"{Path.Combine(Application.dataPath,k_PackageRoot)}/");
+			ExportPackage(exportPath,GetPackageFolderPath());
 			ExportVersion($"{k_TargetPath}/version.txt");
 		}
 
@@ -28,7 +28,15 @@ namespace MackySoft.ExportPackageExample.Editor {
 
 		public static string[] GetAssetPaths () {
 			string path = Path.Combine(Application.dataPath,k_PackageRoot);
+			string[] assetPaths = Directory.EnumerateFiles(path,k_SearchPattern,SearchOption.AllDirectories)
+				.Where(x => Path.GetExtension(x) == ".cs" || Path.GetExtension(x) == ".meta" || Path.GetExtension(x) == "asmdef")
+				.Select(x => "Assets" + x.Replace(Application.dataPath,"").Replace(@"\","/"))
+				.ToArray();
 			return new string[] { path };
+		}
+
+		public static string GetPackageFolderPath () {
+			return $"Assets/{k_PackageRoot}";
 		}
 
 		public static string ExportPackage (string exportPath,string assetPath) {
