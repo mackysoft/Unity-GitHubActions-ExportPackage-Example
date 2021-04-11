@@ -1,7 +1,7 @@
 using System.IO;
 using UnityEditor;
 
-namespace MackySoft.ExportPackageExample.Editor {
+namespace ExportPackageExample.Editor {
 	public static class UnityPackageExporter {
 
 		const string k_PackagePath = "ExportPackageExample";
