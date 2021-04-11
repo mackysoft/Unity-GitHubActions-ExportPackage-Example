@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UnityEditor;
@@ -24,8 +22,8 @@ namespace MackySoft.ExportPackageExample.Editor {
 
 		public static string GetExportPath () {
 			string version = Environment.GetEnvironmentVariable("UNITY_PACKAGE_VERSION");
-			string fileName = !string.IsNullOrEmpty(version) ? $"{k_PackageName}.{version}.unitypackage" : $"{k_PackageName}.unitypackage";
-			return $"{k_TargetPath}/{fileName}";
+			string fileName = !string.IsNullOrEmpty(version) ? $"{k_PackageName}.{version}" : k_PackageName;
+			return $"{k_TargetPath}/{fileName}.unitypackage";
 		}
 
 		public static string[] GetAssetPaths () {
