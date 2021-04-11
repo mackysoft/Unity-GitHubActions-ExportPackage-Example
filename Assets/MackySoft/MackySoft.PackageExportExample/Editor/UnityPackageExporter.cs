@@ -16,7 +16,7 @@ namespace MackySoft.ExportPackageExample.Editor {
 			string exportPath = GetExportPath();
 			string[] assetPaths = GetAssetPaths();
 
-			ExportPackage(exportPath,$"Path.Combine(Application.dataPath,k_PackageRoot)/");
+			ExportPackage(exportPath,$"{Path.Combine(Application.dataPath,k_PackageRoot)}/");
 			ExportVersion($"{k_TargetPath}/version.txt");
 		}
 
