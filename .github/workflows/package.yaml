@@ -31,7 +31,7 @@ jobs:
         uses: game-ci/unity-builder@v2
         with:
           unityVersion: 2020.3.1f1
-          buildMethod: MackySoft.ExportPackageExample.Editor.UnityPackageExporter.Export # Path to the export method containing the namespace.
+          buildMethod: ExportPackageExample.Editor.UnityPackageExporter.Export # Path to the export method containing the namespace.
 
       # Upload
       - name: Upload .unitypackage

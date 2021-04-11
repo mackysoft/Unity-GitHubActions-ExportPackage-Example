@@ -1,5 +1,5 @@
 {
-    "name": "MackySoft.ExportPackageExample.Editor",
+    "name": "ExportPackageExample.Editor",
     "rootNamespace": "",
     "references": [
         "GUID:35814d49365f2b2419833676017ad822"
