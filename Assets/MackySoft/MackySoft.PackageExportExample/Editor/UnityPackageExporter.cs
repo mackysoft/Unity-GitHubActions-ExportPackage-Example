@@ -16,7 +16,7 @@ namespace MackySoft.ExportPackageExample.Editor {
 			string exportPath = GetExportPath();
 			string[] assetPaths = GetAssetPaths();
 
-			ExportPackage(exportPath,assetPaths);
+			ExportPackage(exportPath,$"Path.Combine(Application.dataPath,k_PackageRoot)/");
 			ExportVersion($"{k_TargetPath}/version.txt");
 		}
 
@@ -31,13 +31,13 @@ namespace MackySoft.ExportPackageExample.Editor {
 			return new string[] { path };
 		}
 
-		public static string ExportPackage (string exportPath,string[] assetPaths) {
+		public static string ExportPackage (string exportPath,string assetPath) {
 			var dir = new FileInfo(exportPath).Directory;
 			if (dir != null && !dir.Exists) {
 				dir.Create();
 			}
 
-			AssetDatabase.ExportPackage(assetPaths,exportPath,ExportPackageOptions.Recurse);
+			AssetDatabase.ExportPackage(assetPath,exportPath,ExportPackageOptions.Recurse);
 			return Path.GetFullPath(exportPath);
 		}
 
