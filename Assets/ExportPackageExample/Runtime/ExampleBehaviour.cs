@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace MackySoft.ExportPackageExample {
+namespace ExportPackageExample {
 
 	public class ExampleBehaviour : MonoBehaviour {
 		// Start is called before the first frame update
