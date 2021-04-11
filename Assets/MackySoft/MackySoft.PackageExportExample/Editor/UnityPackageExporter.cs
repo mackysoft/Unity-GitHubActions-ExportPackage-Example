@@ -19,7 +19,7 @@ namespace MackySoft.ExportPackageExample.Editor {
 			string[] assetPaths = GetAssetPaths();
 
 			ExportPackage(exportPath,assetPaths);
-			ExportVersion($"{k_TargetPath}/version");
+			ExportVersion($"{k_TargetPath}/version.txt");
 		}
 
 		public static string GetExportPath () {
