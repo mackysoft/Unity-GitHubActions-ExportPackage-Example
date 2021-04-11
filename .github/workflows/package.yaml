@@ -27,14 +27,14 @@ jobs:
           restore-keys: Library-
 
       # Build
-      - name: Build project
+      - name: Build .unitypackage
         uses: game-ci/unity-builder@v2
         with:
           unityVersion: 2020.3.1f1
-          buildMethod: MackySoft.ExportPackageExample.Editor.UnityPackageExporter.Export
+          buildMethod: MackySoft.ExportPackageExample.Editor.UnityPackageExporter.Export # Path to the export method containing the namespace.
 
-      # Output
-      - name: Output Unity Package
+      # Upload
+      - name: Upload .unitypackage
         uses: actions/upload-artifact@v2
         with:
           name: Unity Package

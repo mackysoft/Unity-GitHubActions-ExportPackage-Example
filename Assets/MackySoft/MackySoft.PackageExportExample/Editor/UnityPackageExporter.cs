@@ -28,11 +28,7 @@ namespace MackySoft.ExportPackageExample.Editor {
 
 		public static string[] GetAssetPaths () {
 			string path = Path.Combine(Application.dataPath,k_PackageRoot);
-			string[] assetPaths = Directory.EnumerateFiles(path,k_SearchPattern,SearchOption.AllDirectories)
-				.Where(x => Path.GetExtension(x) == ".cs" || Path.GetExtension(x) == ".meta" || Path.GetExtension(x) == "asmdef")
-				.Select(x => "Assets" + x.Replace(Application.dataPath,"").Replace(@"\","/"))
-				.ToArray();
-			return assetPaths;
+			return new string[] { path };
 		}
 
 		public static string ExportPackage (string exportPath,string[] assetPaths) {
@@ -41,7 +37,7 @@ namespace MackySoft.ExportPackageExample.Editor {
 				dir.Create();
 			}
 
-			AssetDatabase.ExportPackage(assetPaths,exportPath,ExportPackageOptions.Default);
+			AssetDatabase.ExportPackage(assetPaths,exportPath,ExportPackageOptions.Recurse);
 			return Path.GetFullPath(exportPath);
 		}
 
